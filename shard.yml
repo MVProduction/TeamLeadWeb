@@ -8,10 +8,10 @@ description: |
   Find mates for working in team
 
 dependencies:
-  orion:
-    github: obsidian/orion
-  water:
-    github: shootingfly/water
+  kemal:
+    github: kemalcr/kemal
+  crinja:
+    github: straight-shoota/crinja
 
 targets:
   teamleadweb:

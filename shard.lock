@@ -1,5 +1,9 @@
 version: 1.0
 shards:
+  crinja:
+    github: straight-shoota/crinja
+    version: 0.5.1
+
   inflector:
     github: phoffer/inflector.cr
     version: 0.1.8

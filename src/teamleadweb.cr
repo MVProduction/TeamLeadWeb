@@ -1,11 +1,15 @@
-require "orion"
-require "./views/index_view"
+require "kemal"
+require "crinja"
 
-router TeamLeadWeb do    
-    root do |context|
-      view = IndexView.new
-      context.response.puts view.create
-    end      
-  end
+env = Crinja.new
+env.loader = Crinja::Loader::FileSystemLoader.new("views/")
+
+indexView = env.get_template("index.j2")
+
+get "/" do    
+  indexView.render  
+end
+
+logging false
   
-  TeamLeadWeb.listen(port: 8080)
+Kemal.run
