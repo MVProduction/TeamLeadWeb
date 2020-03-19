@@ -1,0 +1,24 @@
+name: teamleadweb
+version: 0.1.0
+
+authors:
+  - Grabli66 <grabli66@gmail.com>
+
+description: |
+  Find mates for working in team
+
+dependencies:
+  orion:
+    github: obsidian/orion
+  water:
+    github: shootingfly/water
+
+targets:
+  teamleadweb:
+    main: src/teamleadweb.cr
+
+# development_dependencies:
+#   webmock:
+#     github: manastech/webmock.cr
+
+# license: MIT
