@@ -19,5 +19,7 @@ class PostListModel
         @posts = Array(PostItem).new
         @posts << PostItem.new("Ищу людей для стартапа", "Супер идея")
         @posts << PostItem.new("У меня есть идея", "Вообщем слушайте")
+        @posts << PostItem.new("Собираю команду", "Есть идея создать такую программу")
+        @posts << PostItem.new("Проект мечты", "Давно думаю создать такой проект")
     end
 end

@@ -7,8 +7,8 @@ env.loader = Crinja::Loader::FileSystemLoader.new("views/")
 
 get "/" do
   postModel = PostListModel.new
-  
-  indexView = env.get_template("index.j2")
+
+  indexView = env.get_template("index.html")
   indexView.render({ "model" => postModel })
 end
 
