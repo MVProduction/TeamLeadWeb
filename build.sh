@@ -1,0 +1,1 @@
+crystal build src/teamleadweb.cr -o bin/teamleadweb
