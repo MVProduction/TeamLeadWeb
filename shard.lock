@@ -1,22 +1,30 @@
 version: 1.0
 shards:
+  crest:
+    github: mamantoha/crest
+    version: 0.24.0
+
   crinja:
     github: straight-shoota/crinja
     version: 0.5.1
 
-  inflector:
-    github: phoffer/inflector.cr
-    version: 0.1.8
+  exception_page:
+    github: crystal-loot/exception_page
+    version: 0.1.4
 
-  oak:
-    github: obsidian/oak
-    version: 2.0.1
+  http-client-digest_auth:
+    github: mamantoha/http-client-digest_auth
+    version: 0.3.0
 
-  orion:
-    github: obsidian/orion
-    version: 2.3.2
+  kemal:
+    github: kemalcr/kemal
+    version: 0.26.1
 
-  water:
-    github: shootingfly/water
-    version: 0.1.0
+  kilt:
+    github: jeromegn/kilt
+    version: 0.4.0
+
+  radix:
+    github: luislavena/radix
+    version: 0.3.9
 

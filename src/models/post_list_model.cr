@@ -1,3 +1,5 @@
+require "crest"
+
 @[Crinja::Attributes]
 class PostItem
     include Crinja::Object::Auto
@@ -13,13 +15,23 @@ end
 class PostListModel
     include Crinja::Object::Auto
     
-    getter posts : Array(PostItem)
+    @posts : Array(PostItem)
+
+    # Возвращает популярные объявления
+    def getPopularPosts(count : Int32) : Array(PostItem)
+        id = 3
+        resp = Crest.get("http://localhost:3000/posts/getRange/#{id}/#{count}")
+        data = JSON.parse(resp.body)        
+        posts = data["posts"]?.try &.as_a?
+
+        return Array(PostItem).new unless posts
+
+        return posts.map { |x|
+            PostItem.new(x["postTitle"].as_s, x["postText"].as_s)
+        }
+    end
 
     def initialize
         @posts = Array(PostItem).new
-        @posts << PostItem.new("Ищу людей для стартапа", "Супер идея")
-        @posts << PostItem.new("У меня есть идея", "Вообщем слушайте")
-        @posts << PostItem.new("Собираю команду", "Есть идея создать такую программу")
-        @posts << PostItem.new("Проект мечты", "Давно думаю создать такой проект")
     end
 end

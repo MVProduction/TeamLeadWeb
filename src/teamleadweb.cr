@@ -9,9 +9,12 @@ get "/" do
   postModel = PostListModel.new
 
   indexView = env.get_template("index.html")
-  indexView.render({ "model" => postModel })
+  indexView.render(
+    { 
+      popularPosts: postModel.getPopularPosts(10)
+    })
 end
 
-logging false
+# logging false
   
-Kemal.run
+Kemal.run 8080
