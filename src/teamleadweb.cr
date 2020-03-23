@@ -11,7 +11,8 @@ get "/" do
   indexView = env.get_template("index.html")
   indexView.render(
     { 
-      popularPosts: postModel.getPopularPosts(10)
+      popularPosts: postModel.getPopularPosts(10),
+      recentPosts: postModel.getRecentPosts(10)
     })
 end
 
