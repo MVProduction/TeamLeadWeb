@@ -1,0 +1,83 @@
+{% extends "root_layout.html" %}
+
+{% macro createPost(post) %}
+<div class="col-md-4">
+  <div class="card mb-4 shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="80" xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+      <title>Placeholder</title>
+      <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+        dy=".3em">Пользователь</text>
+    </svg>
+    <div class="card-body">
+      <p class="card-title">
+        <a href="#"><strong>{{ post.postTitle }}</strong></a>
+      </p>
+      <p class="card-text text-muted">{{ post.postText }}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{% block body %}
+<header>
+  <div class="navbar navbar-dark bg-dark">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center mr-md-auto">
+        <img src="images/logo.svg" class="mr-3" style="width: 210px; height:81px;" />        
+      </a>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-light" href="#">О проекте</a>
+        <a class="p-2 text-light" href="#">Помочь проекту</a>
+      </nav>
+      <button type="button" class="btn btn-outline-light">ВОЙТИ</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="jumbotron text-center bg-light">
+    <div class="container">
+      <h1 class="italic">"Создать стартап легко. Но не всегда."</h1>
+      <p class="lead text-muted py-2">Team Lead поможет найти команду. Или не поможет. А может всё таки поможет. Но когда
+        неизвестно. И всё это бутет сейчас, но когда неизвестно.</p>
+      <p>
+        <a href="#" class="btn btn-primary mr-4">Искать объявления</a>
+        <a href="#" class="btn btn-secondary mr-4">Искать новаторов</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<div class="bg-light">
+  <div class="container">
+    <h1 class="py-5">Популярное</h1>
+    <div class="row">
+      {# Объявления #}
+      {% for post in popularPosts %}
+        {{ createPost(post) }}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="bg-light">
+  <div class="container">
+    <h1 class="py-5">Новое</h1>
+    <div class="row">
+      {# Объявления #}
+      {% for post in popularPosts %}
+        {{ createPost(post) }}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

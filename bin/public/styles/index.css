@@ -1,0 +1,11 @@
+.italic {
+    font-style: italic;
+}
+
+.jumbotron .container {    
+    max-width: 50rem;
+}
+
+.brand-color {
+    color: #007bff;
+}

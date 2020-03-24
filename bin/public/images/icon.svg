@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="151mm"
+   height="151mm"
+   viewBox="0 0 151 151"
+   version="1.1"
+   id="svg1546"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="icon.svg">
+  <defs
+     id="defs1540" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="0.67427059"
+     inkscape:cy="212.97743"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1543">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-146)">
+    <circle
+       inkscape:export-ydpi="95"
+       inkscape:export-xdpi="95"
+       inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadWeb/art/icon.png"
+       inkscape:transform-center-y="-25.151361"
+       inkscape:transform-center-x="20.414621"
+       r="74.716805"
+       style="fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:3.47274566;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="circle863"
+       cx="76.382988"
+       cy="220.95657" />
+    <g
+       transform="translate(-20.316719,-256.04886)"
+       id="g905"
+       inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadWeb/art/icon.png"
+       inkscape:export-xdpi="95"
+       inkscape:export-ydpi="95"
+       style="fill:#333333">
+      <circle
+         style="fill:#333333;fill-opacity:1;stroke:none;stroke-width:2.31516361;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle866"
+         cx="96.699707"
+         cy="478.3367"
+         r="49.811203"
+         inkscape:transform-center-x="20.414621"
+         inkscape:transform-center-y="-25.151368"
+         inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95" />
+      <path
+         style="fill:#333333;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 96.712924,414.11219 -10.721439,18.57006 a 87.203851,87.203851 0 0 1 11.283236,-0.83894 87.203851,87.203851 0 0 1 9.938839,0.62188 z"
+         id="path883"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path885"
+         d="m 97.953399,543.70943 10.721441,-18.57006 a 87.203851,87.203851 0 0 1 -11.283245,0.83894 87.203851,87.203851 0 0 1 -9.938829,-0.62188 z"
+         style="fill:#333333;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path896"
+         d="m 163.47931,478.03108 -18.57005,-10.72144 a 87.203851,87.203851 0 0 1 0.83893,11.28324 87.203851,87.203851 0 0 1 -0.62187,9.93883 z"
+         style="fill:#333333;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95" />
+      <path
+         style="fill:#333333;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 31.00319,474.89317 18.570057,-10.72143 a 87.203851,87.203851 0 0 0 -0.838937,11.28323 87.203851,87.203851 0 0 0 0.621876,9.93884 z"
+         id="path898"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95" />
+    </g>
+    <g
+       transform="translate(-20.316719,-256.04886)"
+       id="g923"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1"
+       inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadWeb/art/icon.png"
+       inkscape:export-xdpi="95"
+       inkscape:export-ydpi="95">
+      <ellipse
+         inkscape:transform-center-y="-21.352145"
+         inkscape:transform-center-x="18.973971"
+         ry="34.240948"
+         rx="34.722046"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.60261917;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse868"
+         cx="96.757484"
+         cy="479.3089"
+         inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.30835462;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 27.57325,518.16957 c 22.656663,-7.02755 128.27824,-106.72244 128.27824,-106.72244 6.70977,-4.06589 11.40223,-5.60761 5.20922,5.12285 0,0 -98.04902,108.19894 -103.891573,130.70472 C 51.326584,569.78048 4.9165873,525.19712 27.57325,518.16957 Z"
+         id="path872"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="zcczz"
+         inkscape:transform-center-x="24.444815"
+         inkscape:transform-center-y="-21.186096"
+         inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
+         inkscape:export-xdpi="95"
+         inkscape:export-ydpi="95" />
+    </g>
+  </g>
+</svg>
