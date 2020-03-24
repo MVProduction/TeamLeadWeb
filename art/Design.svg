@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,16 +39,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1236"
-     inkscape:window-height="926"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
      id="namedview1238"
      showgrid="false"
-     inkscape:zoom="0.4839262"
-     inkscape:cx="980.42565"
-     inkscape:cy="349.24349"
-     inkscape:window-x="654"
-     inkscape:window-y="48"
-     inkscape:window-maximized="0"
+     inkscape:zoom="0.684375"
+     inkscape:cx="1007.8986"
+     inkscape:cy="597.5481"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg1236"
      showborder="false"
      showguides="false" />
@@ -85,7 +85,7 @@
        style="fill:#145e98;fill-opacity:1;stroke:none;stroke-width:3.03410339;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <rect
-     style="fill:#04131f;fill-opacity:1;stroke:none;stroke-width:3.86487532;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:#212529;fill-opacity:1;stroke:none;stroke-width:3.86487532;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect1246"
      width="1130.3376"
      height="112.36217"
@@ -716,7 +716,7 @@
      inkscape:export-xdpi="95"
      inkscape:export-ydpi="95" />
   <g
-     style="fill:#04131f;fill-opacity:1"
+     style="fill:#212529;fill-opacity:1"
      inkscape:export-ydpi="95"
      inkscape:export-xdpi="95"
      inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadWeb/art/icon.png"
@@ -732,7 +732,7 @@
        cy="478.3367"
        cx="96.699707"
        id="circle4093"
-       style="fill:#04131f;fill-opacity:1;stroke:none;stroke-width:2.31516361;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#212529;fill-opacity:1;stroke:none;stroke-width:2.31516361;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        inkscape:export-ydpi="95"
        inkscape:export-xdpi="95"
@@ -740,12 +740,12 @@
        inkscape:connector-curvature="0"
        id="path4095"
        d="m 96.712924,414.11219 -10.721439,18.57006 a 87.203851,87.203851 0 0 1 11.283236,-0.83894 87.203851,87.203851 0 0 1 9.938839,0.62188 z"
-       style="fill:#04131f;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1" />
+       style="fill:#212529;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1" />
     <path
        inkscape:export-ydpi="95"
        inkscape:export-xdpi="95"
        inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
-       style="fill:#04131f;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:#212529;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
        d="m 97.953399,543.70943 10.721441,-18.57006 a 87.203851,87.203851 0 0 1 -11.283245,0.83894 87.203851,87.203851 0 0 1 -9.938829,-0.62188 z"
        id="path4097"
        inkscape:connector-curvature="0" />
@@ -753,7 +753,7 @@
        inkscape:export-ydpi="95"
        inkscape:export-xdpi="95"
        inkscape:export-filename="/home/grabli66/Workspace/MVP/TeamLeadMobile/assets/icon.png"
-       style="fill:#04131f;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:#212529;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
        d="m 163.47931,478.03108 -18.57005,-10.72144 a 87.203851,87.203851 0 0 1 0.83893,11.28324 87.203851,87.203851 0 0 1 -0.62187,9.93883 z"
        id="path4099"
        inkscape:connector-curvature="0" />
@@ -764,7 +764,7 @@
        inkscape:connector-curvature="0"
        id="path4101"
        d="m 31.00319,474.89317 18.570057,-10.72143 a 87.203851,87.203851 0 0 0 -0.838937,11.28323 87.203851,87.203851 0 0 0 0.621876,9.93884 z"
-       style="fill:#04131f;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1" />
+       style="fill:#212529;stroke:none;stroke-width:0.38454473px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1" />
   </g>
   <g
      inkscape:export-ydpi="95"
