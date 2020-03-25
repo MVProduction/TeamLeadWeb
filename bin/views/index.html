@@ -28,29 +28,40 @@
 
 {% block body %}
 <header>
-  <div class="navbar navbar-dark bg-dark">
-    <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center mr-md-auto">
-        <img src="images/logo.svg" class="mr-3" style="width: 210px; height:81px;" />        
-      </a>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-light" href="#">О проекте</a>
-        <a class="p-2 text-light" href="#">Помочь проекту</a>
-      </nav>
-      <button type="button" class="btn btn-outline-light">ВОЙТИ</button>
-    </div>
-  </div>
 </header>
 
 <main>
-  <section class="jumbotron text-center bg-light">
-    <div class="container">
-      <h1 class="italic">"Создать стартап легко. Но не всегда."</h1>
-      <p class="lead text-muted py-2">Team Lead поможет найти команду. Или не поможет. А может всё таки поможет. Но когда
-        неизвестно. И всё это бутет сейчас, но когда неизвестно.</p>
+  <section class="text-center bg-light"
+    data-background="https://demo.themesberg.com/bootstrap/spaces/assets/img/hero.jpg"
+    style="background-image: url(https://demo.themesberg.com/bootstrap/spaces/assets/img/hero.jpg);">
+    <div class="navbar">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center mr-md-auto">
+          <img src="images/logo.svg" class="mr-3" style="width: 210px; height: 51px;" />
+        </a>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-light" href="#">О проекте</a>
+          <a class="p-2 text-light" href="#">Помочь проекту</a>
+        </nav>
+        <button type="button" class="btn btn-outline-light">ВОЙТИ</button>
+      </div>
+    </div>
+    <div id="search-container" class="container pt-5 pb-5">
+      <h1 class="italic pb-3 light">"Создать стартап легко. Но не всегда."</h1>
+      <div id="search-panel" class="row row py-4">
+        <div class="col-8 d-flex align-items-center">
+          <input type="text" placeholder="Строка поиска" class="w-100 h-100 pl-2">
+        </div>
+        <div class="col-3 d-flex align-items-center pl-0">
+          <input type="text" placeholder="По содержанию" class="w-100 h-100 pl-2">
+        </div>
+        <div class="col-0 d-flex align-items-center">
+          <button type="button" class="btn btn-light h-100">Найти</button>
+        </div>
+      </div>
+      <p class="lead text-muted pt-3 pb-2">Не нашли подходящего проекта? Не беда. Начните свой!</p>
       <p>
-        <a href="#" class="btn btn-primary mr-4">Искать объявления</a>
-        <a href="#" class="btn btn-secondary mr-4">Искать новаторов</a>
+        <a href="#" class="btn btn-success px-5 py-2">Начать проект</a>
       </p>
     </div>
   </section>
@@ -62,7 +73,7 @@
     <div class="row">
       {# Объявления #}
       {% for post in popularPosts %}
-        {{ createPost(post) }}
+      {{ createPost(post) }}
       {% endfor %}
     </div>
   </div>
@@ -74,7 +85,7 @@
     <div class="row">
       {# Объявления #}
       {% for post in popularPosts %}
-        {{ createPost(post) }}
+      {{ createPost(post) }}
       {% endfor %}
     </div>
   </div>

@@ -1,3 +1,19 @@
+#search-container p {
+    color: #fff!important;
+}
+
+#search-container h1 {
+    color: #fff!important;
+}
+
+.border0 {
+    border: 0!important;
+}
+
+.shadow0 {
+    box-shadow: none !important;
+}
+
 .italic {
     font-style: italic;
 }
