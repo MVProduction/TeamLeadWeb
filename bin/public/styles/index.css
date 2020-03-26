@@ -1,5 +1,13 @@
+#search-panel input {
+    height: 2.7em!important;
+}
+
+#search-container {
+    background: radial-gradient(#3333339e, #33333300);
+}
+
 #search-container p {
-    color: #fff!important;
+    color: #fff!important;    
 }
 
 #search-container h1 {

@@ -1,7 +1,7 @@
 {% extends "root_layout.html" %}
 
 {% macro createPost(post) %}
-<div class="col-md-4">
+<div class="col-md-12">
   <div class="card mb-4 shadow-sm">
     <svg class="bd-placeholder-img card-img-top" width="100%" height="80" xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
@@ -34,10 +34,10 @@
   <section class="text-center bg-light"
     data-background="https://demo.themesberg.com/bootstrap/spaces/assets/img/hero.jpg"
     style="background-image: url(https://demo.themesberg.com/bootstrap/spaces/assets/img/hero.jpg);">
-    <div class="navbar">
+    <div class="navbar bg-dark">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center mr-md-auto">
-          <img src="images/logo.svg" class="mr-3" style="width: 210px; height: 51px;" />
+          <img src="images/logo.svg" class="mr-3" style="width: 210px; height: 41px;" />
         </a>
         <nav class="my-2 my-md-0 mr-md-3">
           <a class="p-2 text-light" href="#">О проекте</a>
@@ -47,8 +47,8 @@
       </div>
     </div>
     <div id="search-container" class="container pt-5 pb-5">
-      <h1 class="italic pb-3 light">"Создать стартап легко. Но не всегда."</h1>
-      <div id="search-panel" class="row row py-4">
+      <h1 class="py-5 light">Создать стартап легко. Но не всегда.</h1>
+      <div id="search-panel" class="row row py-4 mx-4">
         <div class="col-8 d-flex align-items-center">
           <input type="text" placeholder="Строка поиска" class="w-100 h-100 pl-2">
         </div>
@@ -67,28 +67,29 @@
   </section>
 </main>
 
-<div class="bg-light">
-  <div class="container">
-    <h1 class="py-5">Популярное</h1>
-    <div class="row">
-      {# Объявления #}
-      {% for post in popularPosts %}
-      {{ createPost(post) }}
-      {% endfor %}
+<div class="container bg-light">
+  <h3 class="pt-5 pb-1">Категории</h1>
+    <div>
+      <a href="#" class="px-1">Новое</a>
+      <a href="#" class="px-1">Популярное</a>
+      <a href="#" class="px-1">Избранное</a>
+      <a href="#" class="px-1">Моё</a>
+      <a href="#" class="px-1">Архив</a>
     </div>
-  </div>
-</div>
-
-<div class="bg-light">
-  <div class="container">
-    <h1 class="py-5">Новое</h1>
-    <div class="row">
-      {# Объявления #}
-      {% for post in popularPosts %}
-      {{ createPost(post) }}
-      {% endfor %}
-    </div>
-  </div>
+    <h3 class="pt-4 pb-1">Тэги</h1>
+      <div class="pb-5">
+        <a href="#" class="px-1">Java</a>
+        <a href="#" class="px-1">C#</a>
+        <a href="#" class="px-1">Backend</a>
+        <a href="#" class="px-1">Frontend</a>
+        <a href="#" class="px-1">GameDev</a>
+      </div>
+      <div class="row">
+        {# Объявления #}
+        {% for post in postList %}
+        {{ createPost(post) }}
+        {% endfor %}
+      </div>
 </div>
 
 {% endblock %}
