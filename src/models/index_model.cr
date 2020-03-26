@@ -1,10 +1,21 @@
 require "crest"
 require "./post_item"
 
-# Модель списка
+# Модель начальной страницы с объявлениями
 @[Crinja::Attributes]
-class PostListModel
+class IndexModel
     include Crinja::Object::Auto        
+
+    @@my_quotes = ["Стартап - это легко. Но не всегда!", 
+        "Если вы не создали стартап, то кто то другой создал!",
+        "Что бы начать стартап, нужно начать стартап!",
+        "Упорствуйте и что-нибудь получится. Но возможно не то что Вы хотели!"
+    ]
+
+    # Возвращает мою цитату случайным образом
+    def getRandomQuote()
+        @@my_quotes.sample(1)[0]
+    end
 
     # Возвращает популярные объявления
     def getPopularPosts(count : Int32, textLen : Int32) : Array(PostItem)        

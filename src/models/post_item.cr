@@ -1,3 +1,5 @@
+require "crinja"
+
 # Объявление пользователя
 @[Crinja::Attributes]
 class PostItem
