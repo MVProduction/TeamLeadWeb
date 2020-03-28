@@ -14,12 +14,40 @@
     color: #fff!important;
 }
 
+#footer-copyright {
+    background: #000;
+    text-align: center;
+    color: #fff;
+    padding: 0.8em;
+    font-size: 10pt;
+}
+
+#post-pager .p-switch {
+    border: 1px solid #909496;
+    padding: 0.4em;
+    font-size: 10pt;
+    border-radius: 2px;
+    margin-right: 0.5em;
+    min-width: 2em;
+    text-align: center;
+    cursor: pointer;
+    color: #555;
+}
+
 .strong {
     font-weight: bold;
 }
 
+.bc-black {
+    background-color: #000!important;
+}
+
+.bc-white {
+    background-color: #fff!important;
+}
+
 .c-white {
-    color: #fff;
+    color: #fff!important;
 }
 
 .flex-1 {
