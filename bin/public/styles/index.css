@@ -14,6 +14,14 @@
     color: #fff!important;
 }
 
+.flex-1 {
+    flex: 1;
+}
+
+.fs-10 {
+    font-size: 10pt;
+}
+
 .border0 {
     border: 0!important;
 }
