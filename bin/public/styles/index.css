@@ -36,6 +36,7 @@
 
 .border0 {
     border: 0!important;
+    border-radius: 0!important;
 }
 
 .shadow0 {
