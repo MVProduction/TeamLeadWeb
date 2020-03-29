@@ -1,4 +1,5 @@
 require "./controllers/index_controller"
+require "./controllers/post_controller"
 
 # logging false
   

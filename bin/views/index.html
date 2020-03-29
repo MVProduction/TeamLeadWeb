@@ -23,7 +23,7 @@
         </small>
       </div>
       <p class="card-title">
-        <a href="#"><strong>{{ post.postTitle }}</strong></a>
+        <a href="post/{{ post.postId }}"><strong>{{ post.postTitle }}</strong></a>
       </p>
       <p class="card-text text-muted">{{ post.postText }}...</p>
       <div class="d-flex align-items-center">
@@ -36,7 +36,7 @@
           </svg>
           <span class="fs-11 text-muted">12</span>
         </div>
-        <div class="px-4 flex-1">
+        <div class="px-4">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <title>Количество комментариев</title>
             <path fill="#777"
@@ -45,7 +45,7 @@
           </svg>
           <span class="fs-11 text-muted">10</span>
         </div>
-        <div class="px-4">
+        <div class="px-4 flex-1">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <title>Добавить в избранное</title>
             <path fill="#dc3545"
@@ -54,6 +54,9 @@
           </svg>
           <span class="fs-11 text-muted">1</span>
         </div>
+        <div class="px-4">
+          <a href="post/{{ post.postId }}" class="btn btn-outline-primary">Читать дальше</a>
+        </div>
       </div>
     </div>
   </div>
@@ -61,25 +64,10 @@
 {% endmacro %}
 
 {% block body %}
-<header>
-</header>
-
 <main>
   <section class="text-center bg-light"
     data-background="https://demo.themesberg.com/bootstrap/spaces/assets/img/hero.jpg"
-    style="background-image: url(https://demo.themesberg.com/bootstrap/spaces/assets/img/hero.jpg);">
-    <div class="navbar bg-dark">
-      <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand d-flex align-items-center mr-md-auto">
-          <img src="images/logo.svg" class="mr-3" style="width: 210px; height: 41px;" />
-        </a>
-        <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-light" href="#">О проекте</a>
-          <a class="p-2 text-light" href="#">Помочь проекту</a>
-        </nav>
-        <button type="button" class="btn btn-outline-light">ВОЙТИ</button>
-      </div>
-    </div>
+    style="background-image: url(https://demo.themesberg.com/bootstrap/spaces/assets/img/hero.jpg);">    
     <div id="search-container" class="container pt-5 pb-5">
       <h2 class="py-5 light">{{ quote }}</h2>
       <div id="search-panel" class="row row py-4 mx-4">
@@ -150,29 +138,5 @@
       <div class="p-switch">Следующая</div>
     </div>
 </div>
-
-<footer class="bc-black mt-5">
-  <div class="container fs-10 py-5">
-    <div class="row">
-      <div class="col-3 c-white">
-        TeamLead - место где ищут и находят команду.
-      </div>
-      <div class="col-2">
-        <div>
-          <a href="#">О проекте</a>
-        </div>
-        <div>
-          <a href="#">Помочь проекту</a>
-        </div>
-        <div>
-          <a href="#">info@teamlead.org</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="footer-copyright">
-    © 2020 Copyright: teamlead.com
-  </div>
-</footer>
 
 {% endblock %}

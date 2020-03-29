@@ -5,6 +5,9 @@ require "crinja"
 class PostItem
     include Crinja::Object::Auto
 
+    # Идентификатор объявления
+    getter postId : Int64
+
     # Заголовок объявления
     getter postTitle : String
 
@@ -12,6 +15,6 @@ class PostItem
     getter postText : String
 
     # Конструктор
-    def initialize(@postTitle, @postText)        
+    def initialize(@postId ,@postTitle, @postText)        
     end
 end
