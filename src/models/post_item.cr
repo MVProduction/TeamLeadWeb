@@ -15,8 +15,7 @@ class PostItem
     getter postText : String
 
     # Создаёт из Json
-    def self.fromJson(data)
-        p typeof(data)
+    def self.fromJson(data : JSON::Any)        
         PostItem.new(
             data["postId"].as_i64, 
             data["postTitle"].as_s, 

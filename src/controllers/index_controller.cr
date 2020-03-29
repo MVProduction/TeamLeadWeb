@@ -1,7 +1,7 @@
 require "kemal"
 
-require "../models/index_model"
 require "../common/template_factory"
+require "../models/index_model"
 
 get "/" do
   indexModel = IndexModel.new
