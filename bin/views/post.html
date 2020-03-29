@@ -1,5 +1,88 @@
 {% extends "root_layout.html" %}
 
 {% block body %}
-    POST
+<main>
+    <div class="container py-5">
+        <h2 class="pb-3">
+            {{ post.postTitle }}
+        </h2>
+        <div class="d-flex">
+            <div class="pr-3">
+                <img style="width: 180px;height: auto;" class="rounded pb-3"
+                    src="https://www.w3schools.com/bootstrap4/newyork.jpg">
+            </div>
+            <div class="flex-1">
+                <strong>
+                    Карапучило
+                </strong>
+                <div class="text-muted">
+                    Без оплаты
+                </div>
+                <div class="text-muted">
+                    32 минуты назад
+                </div>
+
+                <a href="#" class="mt-4 btn btn-danger fs-10">Присоединиться</a>
+            </div>
+        </div>
+        <strong>
+            Контакты:
+        </strong>
+        <div>
+            <a href="#">Почта: karapuchilo@gmail.com</a>
+        </div>
+        <div>
+            Телеграм: @Ilya_bt (+380999523187)
+        </div>
+        <div>
+            Инстаграм: @ilya.bt
+        </div>
+        <div class="pt-3 strong">
+            Ссылки на проект:
+        </div>
+        <div>
+            http://github.com/someproject
+        </div>
+
+        <div class="pt-5">
+            {{ post.postText }}
+        </div>
+        <div class="pt-5">
+            <a href="#">C#</a>
+            <a href="#">GameDev</a>
+        </div>
+
+        <div class="pt-5 d-flex align-items-center">
+            <div class="pr-4">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Количество просмотров</title>
+                    <path fill="#777"
+                        d="M12 9q1.219 0 2.109 0.891t0.891 2.109-0.891 2.109-2.109 0.891-2.109-0.891-0.891-2.109 0.891-2.109 2.109-0.891zM12 17.016q2.063 0 3.539-1.477t1.477-3.539-1.477-3.539-3.539-1.477-3.539 1.477-1.477 3.539 1.477 3.539 3.539 1.477zM12 4.5q3.703 0 6.703 2.063t4.313 5.438q-1.313 3.375-4.313 5.438t-6.703 2.063-6.703-2.063-4.313-5.438q1.313-3.375 4.313-5.438t6.703-2.063z">
+                    </path>
+                </svg>
+                <span class="fs-11 text-muted">12</span>
+            </div>
+            <div class="px-4">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Количество комментариев</title>
+                    <path fill="#777"
+                        d="M18 8.016v-2.016h-12v2.016h12zM14.016 14.016v-2.016h-8.016v2.016h8.016zM6 9v2.016h12v-2.016h-12zM20.016 2.016q0.797 0 1.383 0.586t0.586 1.383v12q0 0.797-0.586 1.406t-1.383 0.609h-14.016l-3.984 3.984v-18q0-0.797 0.586-1.383t1.383-0.586h16.031z">
+                    </path>
+                </svg>
+                <span class="fs-11 text-muted">10</span>
+            </div>
+            <div class="px-4 flex-1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Добавить в избранное</title>
+                    <path fill="#dc3545"
+                        d="M12 21.328l-1.453-1.313q-2.484-2.25-3.609-3.328t-2.508-2.672-1.898-2.883-0.516-2.648q0-2.297 1.57-3.891t3.914-1.594q2.719 0 4.5 2.109 1.781-2.109 4.5-2.109 2.344 0 3.914 1.594t1.57 3.891q0 1.828-1.219 3.797t-2.648 3.422-4.664 4.359z">
+                    </path>
+                </svg>
+                <span class="fs-11 text-muted">1</span>
+            </div>
+        </div>
+
+        <h3 class="pt-5">Комментарии</h3>
+    </div>
+</main>
 {% endblock %}

@@ -27,7 +27,7 @@ class IndexModel
         return Array(PostItem).new unless posts
 
         return posts.map { |x|
-            PostItem.new(x["postId"].as_i64, x["postTitle"].as_s, x["postText"].as_s)
+            PostItem.fromJson(x)
         }
     end
 
@@ -40,7 +40,7 @@ class IndexModel
         return Array(PostItem).new unless posts
 
         return posts.map { |x|
-            PostItem.new(x["postId"].as_i64, x["postTitle"].as_s, x["postText"].as_s)
+            PostItem.fromJson(x)
         }
     end
 
