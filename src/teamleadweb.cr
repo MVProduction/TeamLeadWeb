@@ -1,3 +1,4 @@
+require "./controllers/login_controller"
 require "./controllers/index_controller"
 require "./controllers/post_discussion_controller"
 require "./controllers/help_project_controller"

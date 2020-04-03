@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/common.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/login_view.css" crossorigin="anonymous">
+    <title>TeamLead - Войти</title>
+</head>
+
+<body>
+    <div id="outer-form" class="shadow bg-light px-5 py-3">
+        <div class="title d-flex py-5">
+            <h3>Войдите или зарегистрируйтесь</h3>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Адрес электронной почты">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Пароль">
+        </div>
+        <div id="remember-panel">
+            <div class="input-group-check">
+                <input type="checkbox" id="remember-check">
+                <label class="text-muted fs-10 pl-1" for="remember-check">Запомнить меня</label>
+            </div>
+            <a href="#" class="fs-10">Забыли пароль?</a>
+        </div>
+        <a href="#" class="btn btn-primary mt-3">ВОЙТИ</a>
+        <div class="pt-4 fs-11 text-center">
+            <span>Ещё нет аккаунта?</span>
+            <span><a href="#">Зарегистрируйтесь</a></span>
+        </div>
+
+        <div class="text-muted fs-10 text-center pt-4">
+            Или войдите используя
+        </div>
+        <div id="login-provider-panel" class="py-4">
+            <div class="social-button mr-2 facebook-color">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="social-button google-color">
+                <i class="fab fa-google"></i>
+            </div>
+        </div>
+    </div>
+</body>

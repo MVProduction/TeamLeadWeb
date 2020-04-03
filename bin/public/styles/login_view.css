@@ -1,0 +1,83 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Roboto;
+    background-image: url(/images/bg-login-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#outer-form {
+    display: flex;
+    width: 20%;
+    min-width: 27em;
+    flex-direction: column;
+}
+
+#outer-form .title {
+    text-align: center;
+    justify-content: center;
+    color: #555;
+}
+
+#outer-form #remember-panel {
+    display: flex;
+}
+
+#remember-panel .input-group-check {
+    flex: 1;
+}
+
+#login-provider-panel {
+    display: flex;
+    justify-content: center;
+}
+
+.social-button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.social-button:hover {
+    color: #fff;
+    background-color: #555;
+    cursor: pointer;
+}
+
+.facebook-color {
+    background-color: #3b5998;
+}
+
+.google-color {
+    background-color: #d93025;
+}
+
+.input-group-check {    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.input-group-check input {
+    display: flex;
+}
+
+.input-group-check label {
+    display: flex;
+    margin: 0;
+}

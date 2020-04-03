@@ -1,0 +1,9 @@
+/* Стили которые могут использоваться везде */
+
+.fs-10 {
+    font-size: 10pt !important;
+}
+
+.fs-11 {
+    font-size: 11pt !important;
+}
