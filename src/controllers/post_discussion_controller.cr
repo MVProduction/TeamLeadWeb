@@ -13,7 +13,7 @@ get "/post/:id" do |env|
 
   postModel = PostDiscussionModel.new
 
-  postView = TemplateFactory.instance.getTemplate("post_discussion_view.html")
+  postView = TemplateFactory.instance.getTemplate("main/post_discussion_view.html")
   postView.render({
     post: postModel.getPost(id)
   })
