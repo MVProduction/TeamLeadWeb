@@ -1,7 +1,7 @@
 require "kemal"
 
 require "../common/template_factory"
-require "../models/post_discussion_model"
+require "../models/view_post_model"
 
 get "/post/:id" do |env|
   id = env.params.url["id"]?.try &.to_i64
@@ -11,9 +11,9 @@ get "/post/:id" do |env|
     next
   end
 
-  postModel = PostDiscussionModel.new
+  postModel = ViewPostModel.new
 
-  postView = TemplateFactory.instance.getTemplate("main/post_discussion_view.html")
+  postView = TemplateFactory.instance.getTemplate("main/view_post_view.html")
   postView.render({
     post: postModel.getPost(id)
   })

@@ -3,7 +3,7 @@ require "./post_item"
 
 # Модель для вида обсуждения объявления
 @[Crinja::Attributes]
-class PostDiscussionModel
+class ViewPostModel
     include Crinja::Object::Auto
 
     # Возвращает объявление по идентификатору
