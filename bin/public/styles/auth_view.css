@@ -31,6 +31,15 @@ body {
     display: flex;
 }
 
+#inner-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#loader-form {
+    text-align: center;
+}
+
 #remember-panel .input-group-check {
     flex: 1;
 }
