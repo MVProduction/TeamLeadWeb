@@ -5,12 +5,17 @@ $(document).ready(function () {
         $('#inner-form').hide();
         $('#loader-form').show();
 
-        $.ajax({
-            type: "POST",
-            url: "/auth/mail_login",
-            data: data,
-            success: success,
-            dataType: dataType
+        var email = $('#email-input').val();
+        var password = $('#password-input').val();
+
+        // TODO: валидация        
+
+        TeamLeadWebService.instance.mailLogin(email, password).then(function (code) {
+            if (code == 0) {
+                window.location.replace("/");
+            } else {
+                // TODO: вывод ошибки
+            }
         });
     });
 });

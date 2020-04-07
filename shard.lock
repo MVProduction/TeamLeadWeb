@@ -2,11 +2,11 @@ version: 1.0
 shards:
   crest:
     github: mamantoha/crest
-    version: 0.24.0
+    version: 0.24.1
 
   crinja:
     github: straight-shoota/crinja
-    version: 0.5.1
+    version: 0.6.0
 
   exception_page:
     github: crystal-loot/exception_page
