@@ -10,8 +10,9 @@ $(document).ready(function () {
 
         // TODO: валидация        
 
-        TeamLeadWebService.instance.mailLogin(email, password).then(function (code) {
-            if (code == 0) {
+        TeamLeadWebService.instance.mailLogin(email, password).then(function (res) {
+            console.log(res);
+            if (res.code == 0) {
                 window.location.replace("/");
             } else {
                 // TODO: вывод ошибки

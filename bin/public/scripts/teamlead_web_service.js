@@ -25,7 +25,10 @@ class TeamLeadWebService {
                     }),
                     contentType: "application/json; charset=utf-8",
                     success: function (res) {
-                        resolve(res.code);
+                        resolve({
+                            code : res.code,
+                            sessionId : res.sessionId
+                        });
                     },
                     dataType: 'json'
                 });

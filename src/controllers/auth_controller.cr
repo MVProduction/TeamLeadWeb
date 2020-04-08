@@ -36,7 +36,15 @@ post "/auth/mail_login" do |env|
   end
 
   model = AuthModel.new()
-  code = model.mail_login(login, password)
+  result = model.mail_login(login, password)
 
-  next getCodeResponse(code)
+  case result
+  when Int32
+    next getCodeResponse(result)
+  when String
+    next {
+      code: OK_CODE,
+      sessionId: result
+  }.to_json
+  end  
 end
