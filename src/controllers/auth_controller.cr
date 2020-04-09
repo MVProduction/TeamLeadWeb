@@ -48,3 +48,16 @@ post "/auth/mail_login" do |env|
   }.to_json
   end  
 end
+
+# Регистрирует поьзователя по электронной почте и паролю
+post "/auth/mail_register" do |env|
+  login = env.params.json["login"]?.as?(String)
+  password = env.params.json["password"]?.as?(String)
+  
+  if login.nil? || password.nil?
+    next getCodeResponse(BAD_REQUEST)
+  end
+
+  model = AuthModel.new()
+  result = model.mail_register(login, password)
+end

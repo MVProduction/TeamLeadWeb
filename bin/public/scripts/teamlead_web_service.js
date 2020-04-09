@@ -3,14 +3,22 @@ class TeamLeadWebService {
     /// Экземпляр
     static instance = new TeamLeadWebService();
 
+    /// Задержка перед отправкой
+    delay = 1000;
+
     /**
      * Осуществляет вход с помощью электронного адреса и пароля
      * email:string - электронный адрес
-     * password:string - пароль
-     * delay:int - задержка работы
+     * password:string - пароль     
      * return code:int - код ответа
      */
-    mailLogin(email, password, delay = 1000) {
+    /**
+     * Осуществляет вход с помощью электронного адреса и пароля
+     * @param {string} email - электронный адрес
+     * @param {int} password - пароль
+     * @return {int} - код ответа
+     */
+    mailLogin(email, password) {
         return new Promise(function (resolve, reject) {
             setTimeout(function () {
                 console.log(email);
@@ -26,13 +34,43 @@ class TeamLeadWebService {
                     contentType: "application/json; charset=utf-8",
                     success: function (res) {
                         resolve({
-                            code : res.code,
-                            sessionId : res.sessionId
+                            code: res.code,
+                            sessionId: res.sessionId
                         });
                     },
                     dataType: 'json'
                 });
-            }, delay);
+            }, this.delay);
+        });
+    }
+
+    /**
+     * Регистрирует пользователя по электронной почте и паролю
+     * @param {string} email 
+     * @param {string} password 
+     */
+    registerByMail(email, password) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log(email);
+                console.log(password);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/auth/mail_register",
+                    data: JSON.stringify({
+                        'login': email,
+                        'password': password
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (res) {
+                        resolve({
+                            code: res.code
+                        });
+                    },
+                    dataType: 'json'
+                });
+            }, this.delay);
         });
     }
 }

@@ -16,4 +16,17 @@ class AuthModel
         return code if code != OK_CODE
         return data["sessionId"].to_s
     end
+
+    # Регистрирует пользователя по почте и паролю
+    def mail_register(login : String, password : String) : Int32
+        resp = Crest.post(
+            "http://localhost:3000/user/mailRegister",
+            headers: {"Content-Type" => "application/json"},
+            form: { login: login, password: password }.to_json
+        )
+
+        data = JSON.parse(resp.body)        
+        code = data["code"].as_i
+        return code
+    end
 end
