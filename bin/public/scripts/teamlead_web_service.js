@@ -19,6 +19,7 @@ class TeamLeadWebService {
      * @return {int} - код ответа
      */
     mailLogin(email, password) {
+        var del = this.delay;
         return new Promise(function (resolve, reject) {
             setTimeout(function () {
                 console.log(email);
@@ -40,7 +41,7 @@ class TeamLeadWebService {
                     },
                     dataType: 'json'
                 });
-            }, this.delay);
+            }, del);
         });
     }
 
@@ -50,8 +51,10 @@ class TeamLeadWebService {
      * @param {string} password 
      */
     registerByMail(email, password) {
+        console.log("registerByMail");
+        var del = this.delay;
         return new Promise(function (resolve, reject) {
-            setTimeout(function () {
+            setTimeout(function () {                
                 console.log(email);
                 console.log(password);
 
@@ -70,7 +73,7 @@ class TeamLeadWebService {
                     },
                     dataType: 'json'
                 });
-            }, this.delay);
+            }, del);
         });
     }
 }
