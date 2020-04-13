@@ -21,13 +21,13 @@ get "/auth/register" do
   loginView.render()
 end
 
-get "/auth/reset_password" do
+get "/auth/resetPassword" do
   loginView = TemplateFactory.instance.getTemplate("auth/reset_password_view.html")
   loginView.render()
 end
 
 # Запрос входа по электронной почте пользователя и паролем
-post "/auth/mail_login" do |env|
+post "/auth/loginByMail" do |env|
   login = env.params.json["login"]?.as?(String)
   password = env.params.json["password"]?.as?(String)
   
@@ -36,7 +36,7 @@ post "/auth/mail_login" do |env|
   end
 
   model = AuthModel.new()
-  result = model.mail_login(login, password)
+  result = model.loginByMail(login, password)
 
   case result
   when Int32
@@ -49,15 +49,18 @@ post "/auth/mail_login" do |env|
   end  
 end
 
-# Регистрирует поьзователя по электронной почте и паролю
-post "/auth/mail_register" do |env|
+# Создаёт ссылку на регистрацию
+# Отправляет на почту письмо
+# Возвращает код ответа
+post "/auth/sendRegisterLink" do |env|
   login = env.params.json["login"]?.as?(String)
   password = env.params.json["password"]?.as?(String)
   
   if login.nil? || password.nil?
     next getCodeResponse(BAD_REQUEST)
   end
-
+  
   model = AuthModel.new()
-  result = model.mail_register(login, password)
+  code = model.sendRegisterLink(login, password)
+  next getCodeResponse(code)
 end
