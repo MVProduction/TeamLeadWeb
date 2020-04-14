@@ -43,9 +43,9 @@ post "/auth/loginByMail" do |env|
     next getCodeResponse(result)
   when String
     next {
-      code: OK_CODE,
-      sessionId: result
-  }.to_json
+        code: OK_CODE,
+        sessionId: result
+    }.to_json
   end  
 end
 
@@ -62,5 +62,14 @@ post "/auth/sendRegisterLink" do |env|
   
   model = AuthModel.new()
   code = model.sendRegisterLink(login, password)
+  next getCodeResponse(code)
+end
+
+# Подтверждает регистрацию по электронной почте
+# При подтверждении создаётся пользователь
+get "/auth/confirmMailRegister/:id" do |env|
+  ticketId = env.params.url["id"]
+  model = AuthModel.new()
+  code = model.confirmMailRegister(ticketId)
   next getCodeResponse(code)
 end

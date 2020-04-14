@@ -36,7 +36,7 @@ class AuthModel
         end
 
         # TODO: интернализация
-        ticketUrl = "http://#{SERVICE_HOST}:#{SERVICE_PORT}/auth/confirmMailRegister"
+        ticketUrl = "http://#{SERVICE_HOST}:#{SERVICE_PORT}/auth/confirmMailRegister/#{ticketId}"
 
         # Отправляет письмо со ссылкой завершения регистрации
         message = <<-MAIL
@@ -59,6 +59,17 @@ class AuthModel
                 message: message,
                 recepient: login
             }.to_json
+        )
+
+        data = JSON.parse(resp.body)        
+        code = data["code"].as_i        
+        return code
+    end
+
+    # Отправляет подтверждение регистрации по почте
+    def confirmMailRegister(ticketId : String)
+        resp = Crest.get(
+            "http://localhost:3000/user/confirmRegisterTicket/#{ticketId}"
         )
 
         data = JSON.parse(resp.body)        

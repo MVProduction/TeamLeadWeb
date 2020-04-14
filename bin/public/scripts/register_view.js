@@ -23,7 +23,7 @@ $(document).ready(function () {
         TeamLeadWebService.instance.registerByMail(email, password).then(function (res) {
             console.log(res);
             if (res.code == 0) {
-                window.location.replace("/");
+                //window.location.replace("/");
             } else {
                 // TODO: вывод ошибки
             }

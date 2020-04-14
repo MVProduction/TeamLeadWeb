@@ -27,7 +27,7 @@ class TeamLeadWebService {
 
                 $.ajax({
                     type: "POST",
-                    url: "/auth/mail_login",
+                    url: "/auth/loginByMail",
                     data: JSON.stringify({
                         'login': email,
                         'password': password
@@ -60,7 +60,7 @@ class TeamLeadWebService {
 
                 $.ajax({
                     type: "POST",
-                    url: "/auth/mail_register",
+                    url: "/auth/sendRegisterLink",
                     data: JSON.stringify({
                         'login': email,
                         'password': password
