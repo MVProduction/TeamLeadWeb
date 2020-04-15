@@ -69,7 +69,13 @@ end
 # При подтверждении создаётся пользователь
 get "/auth/confirmMailRegister/:id" do |env|
   ticketId = env.params.url["id"]
+  p ticketId  
   model = AuthModel.new()
   code = model.confirmMailRegister(ticketId)
-  next getCodeResponse(code)
+  
+  # TODO: обрабатывать код ошибки
+  if code == OK_CODE
+    confirmView = TemplateFactory.instance.getTemplate("auth/register_complete_view.html")
+    next confirmView.render()
+  end
 end
