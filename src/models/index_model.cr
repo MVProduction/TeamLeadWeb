@@ -2,6 +2,7 @@ require "crest"
 require "./post_item"
 
 # Модель начальной страницы с объявлениями
+# TODO: резделить на несколько моделей
 @[Crinja::Attributes]
 class IndexModel
     include Crinja::Object::Auto        
@@ -43,9 +44,5 @@ class IndexModel
         return posts.map { |x|
             PostItem.fromJson(x)
         }
-    end
-
-    # Конструктор
-    def initialize
     end
 end

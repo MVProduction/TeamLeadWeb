@@ -11,10 +11,12 @@ get "/post/:id" do |env|
     next
   end
 
+  userModel = UserModel.new
   postModel = ViewPostModel.new
 
   postView = TemplateFactory.instance.getTemplate("main/view_post_view.html")
   postView.render({
+    loginUser: userModel.getUserInfoFromCookie(env),
     post: postModel.getPost(id)
   })
 end

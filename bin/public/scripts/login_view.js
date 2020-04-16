@@ -13,6 +13,7 @@ $(document).ready(function () {
         TeamLeadWebService.instance.mailLogin(email, password).then(function (res) {
             console.log(res);
             if (res.code == 0) {
+                Cookies.set('sessionId', res.sessionId);                
                 window.location.replace("/");
             } else {
                 // TODO: вывод ошибки

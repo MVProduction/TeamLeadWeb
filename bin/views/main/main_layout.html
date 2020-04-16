@@ -33,7 +33,16 @@
                     <a class="p-2 text-light" href="/">Главная</a>
                     <a class="p-2 text-light" href="/help_project">Помочь проекту</a>
                 </nav>
+                <!-- Кнопка входа или информация пользователя -->
+                {% if loginUser %}                
+                <div class="text-white">
+                    <a class="text-white" href="#">{{ loginUser.name }}</a>
+                </div>
+                <div id="user-avatar" class="rounded-circle ml-2">
+                </div>
+                {% else %}
                 <a type="button" href="/auth/login" class="btn btn-outline-light">ВОЙТИ</a>
+                {% endif %}
             </div>
         </div>
     </header>
