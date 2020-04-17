@@ -14,4 +14,30 @@ class PostService
         post = data["post"]
         PostItemData.fromJson(post)
     end
+
+    # Возвращает популярные объявления
+    def getPopularPosts(count : Int32, textLen : Int32) : Array(PostItemData)        
+        resp = Crest.get("http://localhost:3000/posts/getPopular/#{count}?textLen=#{textLen}")
+        data = JSON.parse(resp.body)        
+        posts = data["posts"]?.try &.as_a?
+
+        return Array(PostItemData).new unless posts
+
+        return posts.map { |x|
+            PostItemData.fromJson(x)
+        }
+    end
+
+    # Возвращает новые объявления
+    def getRecentPosts(count : Int32, textLen : Int32) : Array(PostItemData)        
+        resp = Crest.get("http://localhost:3000/posts/getRecent/#{count}?textLen=#{textLen}")
+        data = JSON.parse(resp.body)        
+        posts = data["posts"]?.try &.as_a?
+
+        return Array(PostItemData).new unless posts
+
+        return posts.map { |x|
+            PostItemData.fromJson(x)
+        }
+    end
 end
