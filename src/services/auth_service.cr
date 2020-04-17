@@ -1,8 +1,9 @@
 require "../common/code_responses"
 require "../common/common_constants"
+require "./base_service"
 
 # Сервис для проведения аутентификации
-class AuthService
+class AuthService < BaseService
     # Экземпляр
     @@instance = AuthService.new
 
@@ -14,31 +15,27 @@ class AuthService
     # Вход через электронную почту
     # Возвращает идентификатор сессии или код результата 
     def loginByMail(login : String, password : String) : String | Int32
-        resp = Crest.post(
-            "http://localhost:3000/user/loginByMail",
-            headers: {"Content-Type" => "application/json"},
-            form: { login: login, password: password }.to_json
+        resp = sendPost(
+            "/user/loginByMail",
+            json: { login: login, password: password }
         )
-
-        data = JSON.parse(resp.body)
-        code = data["code"].as_i
+        
+        code = resp["code"].as_i
         return code if code != OK_CODE
-        return data["sessionId"].to_s
+        return resp["sessionId"].to_s
     end
 
     # Отправляет ссылку на регистрацию на почту
     # Возвращает код результата
     def sendRegisterLink(login : String, password : String) : Int32
         # Создаёт заявку на регистрацию
-        resp = Crest.post(
-            "http://localhost:3000/user/createRegisterTicket",
-            headers: {"Content-Type" => "application/json"},
-            form: { login: login, password: password }.to_json
+        resp = sendPost(
+            "/user/createRegisterTicket",            
+            json: { login: login, password: password }
         )
 
-        data = JSON.parse(resp.body)        
-        code = data["code"].as_i
-        ticketId = data["ticketId"]?
+        code = resp["code"].as_i
+        ticketId = resp["ticketId"]?
         if code != OK_CODE || ticketId.nil?
             return code
         end
@@ -59,29 +56,26 @@ class AuthService
             С уважением, комманда TeamLead.
         MAIL
 
-        resp = Crest.post(
-            "http://localhost:3000/mail/send",
-            headers: {"Content-Type" => "application/json"},
-            form: { 
+        resp = sendPost(
+            "/mail/send",            
+            json: { 
                 subject: "TeamLead - регистрация аккаунта", 
                 message: message,
                 recepient: login
-            }.to_json
+            }
         )
-
-        data = JSON.parse(resp.body)        
-        code = data["code"].as_i        
+              
+        code = resp["code"].as_i        
         return code
     end
 
     # Отправляет подтверждение регистрации по почте
     def confirmMailRegister(ticketId : String)
-        resp = Crest.get(
-            "http://localhost:3000/user/confirmRegisterTicket/#{ticketId}"
+        resp = sendGet(
+            "/user/confirmRegisterTicket/#{ticketId}"
         )
-
-        data = JSON.parse(resp.body)        
-        code = data["code"].as_i
+        
+        code = resp["code"].as_i
         return code
     end
 end

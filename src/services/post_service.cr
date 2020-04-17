@@ -1,9 +1,10 @@
 require "crest"
 require "./models/post_item_data"
 require "../common/common_constants"
+require "./base_service"
 
 # Сервис получения объявления/проекта
-class PostService
+class PostService < BaseService
     # Экземпляр
     @@instance = PostService.new
 
@@ -13,18 +14,16 @@ class PostService
     end
 
     # Возвращает объявление по идентификатору
-    def getPost(id : Int64) : PostItemData
-        resp = Crest.get("http://#{API_HOST}:#{API_PORT}/posts/getById/#{id}")
-        data = JSON.parse(resp.body)
-        post = data["post"]
+    def getPost(id : Int64) : PostItemData        
+        resp = sendGet("/posts/getById/#{id}")
+        post = resp["post"]
         PostItemData.fromJson(post)
     end
 
     # Возвращает популярные объявления
     def getPopularPosts(count : Int32, textLen : Int32) : Array(PostItemData)        
-        resp = Crest.get("http://localhost:3000/posts/getPopular/#{count}?textLen=#{textLen}")
-        data = JSON.parse(resp.body)        
-        posts = data["posts"]?.try &.as_a?
+        resp = sendGet("/posts/getPopular/#{count}?textLen=#{textLen}")        
+        posts = resp["posts"]?.try &.as_a?
 
         return Array(PostItemData).new unless posts
 
@@ -35,9 +34,8 @@ class PostService
 
     # Возвращает новые объявления
     def getRecentPosts(count : Int32, textLen : Int32) : Array(PostItemData)        
-        resp = Crest.get("http://localhost:3000/posts/getRecent/#{count}?textLen=#{textLen}")
-        data = JSON.parse(resp.body)        
-        posts = data["posts"]?.try &.as_a?
+        resp = sendGet("/posts/getRecent/#{count}?textLen=#{textLen}")               
+        posts = resp["posts"]?.try &.as_a?
 
         return Array(PostItemData).new unless posts
 
