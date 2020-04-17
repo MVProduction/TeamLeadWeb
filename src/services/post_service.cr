@@ -20,9 +20,21 @@ class PostService < BaseService
         PostItemData.fromJson(post)
     end
 
+    # Возвращает объявления от начального индекса с заданным колличеством
+    def getRangePosts(firstId : Int64, count : Int32, textLen : Int32) : Array(PostItemData)
+        resp = sendGet("/posts/getRange/#{firstId}/#{count}?textLen=#{textLen}")
+        posts = resp["posts"]?.try &.as_a?
+
+        return Array(PostItemData).new unless posts
+
+        return posts.map { |x|
+            PostItemData.fromJson(x)
+        }
+    end
+
     # Возвращает популярные объявления
-    def getPopularPosts(count : Int32, textLen : Int32) : Array(PostItemData)        
-        resp = sendGet("/posts/getPopular/#{count}?textLen=#{textLen}")        
+    def getPopularPosts(count : Int32, textLen : Int32) : Array(PostItemData)
+        resp = sendGet("/posts/getPopular/#{count}?textLen=#{textLen}")
         posts = resp["posts"]?.try &.as_a?
 
         return Array(PostItemData).new unless posts
