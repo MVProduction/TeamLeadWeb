@@ -1,7 +1,9 @@
 require "kemal"
 
 require "../common/template_factory"
-require "../models/view_post_model"
+require "../services/user_service"
+require "../services/post_service"
+require "../services/models/view_post_data"
 
 get "/post/:id" do |env|
   id = env.params.url["id"]?.try &.to_i64
@@ -11,12 +13,12 @@ get "/post/:id" do |env|
     next
   end
 
-  userModel = UserModel.new
-  postModel = ViewPostModel.new
+  userService = UserService.new
+  postService = PostService.new
 
   postView = TemplateFactory.instance.getTemplate("main/view_post_view.html")
   postView.render({
-    loginUser: userModel.getUserInfoFromCookie(env),
-    post: postModel.getPost(id)
+    loginUser: userService.getUserInfoFromCookie(env),
+    post: postService.getPost(id)
   })
 end

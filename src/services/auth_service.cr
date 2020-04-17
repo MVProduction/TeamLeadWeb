@@ -1,8 +1,8 @@
 require "../common/code_responses"
 require "../common/common_constants"
 
-# Модель для проведения аутентификации
-class AuthModel
+# Сервис для проведения аутентификации
+class AuthService
     # Вход через электронную почту
     # Возвращает идентификатор сессии или код результата 
     def loginByMail(login : String, password : String) : String | Int32

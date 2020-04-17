@@ -1,7 +1,7 @@
-require "./user_info_data"
+require "./models/user_info_data"
 
-# Модель для работы с пользователями
-class UserModel
+# сервис для работы с пользователями
+class UserService
     # Возвращает информацию пользователя из cookie
     # Или nil если пользователь не найден
     def getUserInfoFromCookie(env : HTTP::Server::Context) : UserInfoData?

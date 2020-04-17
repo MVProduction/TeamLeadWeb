@@ -1,8 +1,8 @@
 require "crinja"
 
-# Объявление пользователя
+# Объявление/проект пользователя
 @[Crinja::Attributes]
-class PostItem
+class PostItemData
     include Crinja::Object::Auto
 
     # Идентификатор объявления
@@ -16,7 +16,7 @@ class PostItem
 
     # Создаёт из Json
     def self.fromJson(data : JSON::Any)        
-        PostItem.new(
+        PostItemData.new(
             data["postId"].as_i64, 
             data["postTitle"].as_s, 
             data["postText"].as_s

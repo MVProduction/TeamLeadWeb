@@ -1,12 +1,13 @@
 require "kemal"
 
 require "../common/template_factory"
-require "../models/index_model"
-require "../models/user_model"
+require "../services/index_model"
+require "../services/user_service"
+require "../services/models/user_info_data"
 
 get "/" do |env|
   indexModel = IndexModel.new  
-  userModel = UserModel.new
+  userModel = UserService.new
 
   indexView = TemplateFactory.instance.getTemplate("main/index_view.html")
   indexView.render(

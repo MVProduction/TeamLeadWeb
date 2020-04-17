@@ -7,6 +7,6 @@ class UserInfoData
     getter name : String
 
     # Конструктор
-    def initialize(@name)        
+    def initialize(@name)
     end
 end

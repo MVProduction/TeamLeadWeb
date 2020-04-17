@@ -2,7 +2,7 @@ require "kemal"
 
 require "../common/code_responses"
 require "../common/template_factory"
-require "../models/auth_model"
+require "../services/auth_service"
 
 # Отправляет код ответа
 def getCodeResponse(code : Int32)
@@ -35,7 +35,7 @@ post "/auth/loginByMail" do |env|
     next getCodeResponse(BAD_REQUEST)
   end
 
-  model = AuthModel.new()
+  model = AuthService.new()
   result = model.loginByMail(login, password)
 
   case result
@@ -60,7 +60,7 @@ post "/auth/sendRegisterLink" do |env|
     next getCodeResponse(BAD_REQUEST)
   end
   
-  model = AuthModel.new()
+  model = AuthService.new()
   code = model.sendRegisterLink(login, password)
   next getCodeResponse(code)
 end
@@ -70,7 +70,7 @@ end
 get "/auth/confirmMailRegister/:id" do |env|
   ticketId = env.params.url["id"]
   p ticketId  
-  model = AuthModel.new()
+  model = AuthService.new()
   code = model.confirmMailRegister(ticketId)
   
   # TODO: обрабатывать код ошибки
