@@ -35,8 +35,8 @@ post "/auth/loginByMail" do |env|
     next getCodeResponse(BAD_REQUEST)
   end
 
-  model = AuthService.new()
-  result = model.loginByMail(login, password)
+  service = AuthService.instance
+  result = service.loginByMail(login, password)
 
   case result
   when Int32
@@ -60,8 +60,8 @@ post "/auth/sendRegisterLink" do |env|
     next getCodeResponse(BAD_REQUEST)
   end
   
-  model = AuthService.new()
-  code = model.sendRegisterLink(login, password)
+  service = AuthService.instance
+  code = service.sendRegisterLink(login, password)
   next getCodeResponse(code)
 end
 
@@ -70,8 +70,8 @@ end
 get "/auth/confirmMailRegister/:id" do |env|
   ticketId = env.params.url["id"]
   p ticketId  
-  model = AuthService.new()
-  code = model.confirmMailRegister(ticketId)
+  service = AuthService.instance
+  code = service.confirmMailRegister(ticketId)
   
   # TODO: обрабатывать код ошибки
   if code == OK_CODE

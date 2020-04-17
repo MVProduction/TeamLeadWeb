@@ -3,6 +3,14 @@ require "./models/post_item_data"
 
 # Сервис получения моих "гениальных" цитат :)
 class QuoteService
+    # Экземпляр
+    @@instance = QuoteService.new
+
+    # Возвращает экземпляр
+    def self.instance
+        @@instance
+    end
+
     # Список цитат
     # TODO: интернализация :)
     @@my_quotes = ["Стартап - это легко. Но не всегда!", 

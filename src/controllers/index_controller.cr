@@ -6,9 +6,9 @@ require "../services/user_service"
 require "../services/models/user_info_data"
 
 get "/" do |env|
-  postService = PostService.new  
-  userService = UserService.new
-  quoteService = QuoteService.new
+  postService = PostService.instance  
+  userService = UserService.instance
+  quoteService = QuoteService.instance
 
   indexView = TemplateFactory.instance.getTemplate("main/index_view.html")
   indexView.render(

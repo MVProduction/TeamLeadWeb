@@ -3,6 +3,14 @@ require "../common/common_constants"
 
 # Сервис для проведения аутентификации
 class AuthService
+    # Экземпляр
+    @@instance = AuthService.new
+
+    # Возвращает экземпляр
+    def self.instance
+        @@instance
+    end
+
     # Вход через электронную почту
     # Возвращает идентификатор сессии или код результата 
     def loginByMail(login : String, password : String) : String | Int32

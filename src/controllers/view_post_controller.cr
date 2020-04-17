@@ -13,8 +13,8 @@ get "/post/:id" do |env|
     next
   end
 
-  userService = UserService.new
-  postService = PostService.new
+  userService = UserService.instance
+  postService = PostService.instance
 
   postView = TemplateFactory.instance.getTemplate("main/view_post_view.html")
   postView.render({
