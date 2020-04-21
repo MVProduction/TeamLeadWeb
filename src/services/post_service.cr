@@ -2,6 +2,7 @@ require "crest"
 require "./models/post_item_data"
 require "../common/common_constants"
 require "./base_service"
+require "uri"
 
 # Сервис получения объявления/проекта
 class PostService < BaseService
@@ -27,10 +28,35 @@ class PostService < BaseService
         PostItemData.fromJson(post)
     end
 
-    # Разбивает все объявления на страницы и возвращает 
-    # Объявления в количестве postInPage по индексу pageIndex
-    def getPostsByPage(pageIndex : Int32, postInPage : Int32, textLen : Int32) : Array(PostItemData)
-        resp = sendGet("/posts/getByPage/#{pageIndex}/#{postInPage}?textLen=#{textLen}")
+    # Возвращает объявления
+    def getPosts(
+            firstid : Int64?, 
+            limit : Int32?,
+            textLen : Int32?
+        ) : Array(PostItemData)
+
+        path = "/posts/getPosts/"
+
+        queryBuilder = HTTP::Params::Builder.new
+        if limit
+            query.add("limit", limit.to_s)
+        end
+
+        if textLen
+            query.add("textLen", textLen.to_s)
+        end        
+
+        if firstid
+            path += firstid
+        end
+
+        query = queryBuilder.to_s
+        if !query.empty?
+            path + "?" + query
+        end
+        
+        resp = sendGet(path)
+
         posts = resp["posts"]?.try &.as_a?
 
         return Array(PostItemData).new unless posts
@@ -38,41 +64,5 @@ class PostService < BaseService
         return posts.map { |x|
             PostItemData.fromJson(x)
         }
-    end
-
-    # Возвращает объявления от начального индекса с заданным колличеством
-    def getRangePosts(firstId : Int64, count : Int32, textLen : Int32) : Array(PostItemData)
-        resp = sendGet("/posts/getRange/#{firstId}/#{count}?textLen=#{textLen}")
-        posts = resp["posts"]?.try &.as_a?
-
-        return Array(PostItemData).new unless posts
-
-        return posts.map { |x|
-            PostItemData.fromJson(x)
-        }
-    end
-
-    # Возвращает популярные объявления
-    def getPopularPosts(count : Int32, textLen : Int32) : Array(PostItemData)
-        resp = sendGet("/posts/getPopular/#{count}?textLen=#{textLen}")
-        posts = resp["posts"]?.try &.as_a?
-
-        return Array(PostItemData).new unless posts
-
-        return posts.map { |x|
-            PostItemData.fromJson(x)
-        }
-    end
-
-    # Возвращает новые объявления
-    def getRecentPosts(count : Int32, textLen : Int32) : Array(PostItemData)        
-        resp = sendGet("/posts/getRecent/#{count}?textLen=#{textLen}")               
-        posts = resp["posts"]?.try &.as_a?
-
-        return Array(PostItemData).new unless posts
-
-        return posts.map { |x|
-            PostItemData.fromJson(x)
-        }
-    end
+    end    
 end
