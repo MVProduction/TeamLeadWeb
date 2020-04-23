@@ -14,13 +14,6 @@ class PostService < BaseService
         @@instance
     end
 
-    # Возвращает количество страниц для количества объявлений postInPage
-    def getPageCount(postInPage : Int32) : Int64
-        resp = sendGet("/posts/getPostCount")
-        count = resp["postCount"].as_i64
-        return (count / postInPage).to_i64
-    end
-
     # Возвращает объявление по идентификатору
     def getPost(id : Int64) : PostItemData        
         resp = sendGet("/posts/getById/#{id}")
@@ -30,39 +23,43 @@ class PostService < BaseService
 
     # Возвращает объявления
     def getPosts(
-            firstid : Int64?, 
-            limit : Int32?,
-            textLen : Int32?
-        ) : Array(PostItemData)
+            firstId : Int64? = nil, 
+            limit : Int32? = nil,
+            textLen : Int32? = nil            
+        ) : Tuple(Array(PostItemData), Int64?)
 
         path = "/posts/getPosts/"
 
+        # Формирует запросы
         queryBuilder = HTTP::Params::Builder.new
+
+        if firstId
+            queryBuilder.add("firstId", firstId.to_s)
+        end
+
         if limit
-            query.add("limit", limit.to_s)
+            queryBuilder.add("limit", limit.to_s)
         end
 
         if textLen
-            query.add("textLen", textLen.to_s)
-        end        
-
-        if firstid
-            path += firstid
-        end
-
-        query = queryBuilder.to_s
+            queryBuilder.add("textLen", textLen.to_s)
+        end      
+        
+        query = queryBuilder.to_s        
         if !query.empty?
-            path + "?" + query
+            path = path + "?" + query
         end
         
+        p path
         resp = sendGet(path)
 
-        posts = resp["posts"]?.try &.as_a?
-
-        return Array(PostItemData).new unless posts
-
-        return posts.map { |x|
+        posts = resp["posts"]?.try &.as_a? || Array(JSON::Any).new                
+        total = resp["total"]?.try &.as_i64? || 0_i64
+        
+        postArray = posts.map { |x|
             PostItemData.fromJson(x)
         }
+
+        return { postArray, total }
     end    
 end

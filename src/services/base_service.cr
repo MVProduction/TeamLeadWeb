@@ -5,7 +5,9 @@ class BaseService
     # Отправляет GET запрос и возвращает json ответ JSON::Any
     # path должен быть формата /path1/path2/:some?param=value
     def sendGet(path : String) : JSON::Any
-        resp = Crest.get("http://#{API_HOST}:#{API_PORT}#{path}")
+        uri = "http://#{API_HOST}:#{API_PORT}#{path}"
+        p uri
+        resp = Crest.get(uri)
         data = JSON.parse(resp.body)
         return data
     end
