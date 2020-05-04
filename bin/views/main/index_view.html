@@ -110,7 +110,7 @@
   </div>
 </main>
 
-<div class="container bg-light">
+<div id="post-block" class="container bg-light">
   <h3 class="pt-5 pb-1">Категории</h1>
     <div>
       <a href="#" class="px-1">Новое</a>
@@ -134,16 +134,20 @@
       {% endfor %}
     </div>
     <div id="post-pager" class="d-flex">      
+      {% if prevPageId %}
+      <a href="?page={{ prevPageId }}#post-block" class="btn btn-outline-secondary mr-2">Предыдущая</a>
+      {% endif %}
+
       {% for pageInd in pageIndexes %}
         {% if pageInd == (currentPage - 1)  %}
-          <a href="?page={{ pageInd + 1 }}" class="btn btn-outline-secondary mr-2 current-pager">{{ pageInd + 1 }}</a>
+          <a href="?page={{ pageInd + 1 }}#post-block" class="btn btn-outline-secondary mr-2 current-pager">{{ pageInd + 1 }}</a>
         {% else %}
-          <a href="?page={{ pageInd + 1 }}" class="btn btn-outline-secondary mr-2">{{ pageInd + 1 }}</a>
+          <a href="?page={{ pageInd + 1 }}#post-block" class="btn btn-outline-secondary mr-2">{{ pageInd + 1 }}</a>
         {% endif %}
-      {% endfor %}
-      
-      {% if hasPages %}
-      <a href="#" class="btn btn-outline-secondary mr-2">Следующая</a>
+      {% endfor %}          
+
+      {% if nextPageId %}
+      <a href="?page={{ nextPageId }}#post-block" class="btn btn-outline-secondary mr-2">Следующая</a>
       {% endif %}
     </div>
 </div>
