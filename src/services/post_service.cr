@@ -21,25 +21,17 @@ class PostService < BaseService
         PostItemData.fromJson(post)
     end
 
-    # Возвращает объявления
-    def getPosts(
-            firstId : Int64? = nil, 
-            limit : Int32? = nil,
+    # Возвращает объявления по страницам
+    def getPostsByPage(
+            page : Int64, 
+            postsInPage : Int32,
             textLen : Int32? = nil            
-        ) : Tuple(Array(PostItemData), Int64?)
+        ) : Tuple(Array(PostItemData), Int64)
 
-        path = "/posts/getPosts/"
+        path = "/posts/getPostsByPage/#{page}/#{postsInPage}"
 
         # Формирует запросы
         queryBuilder = HTTP::Params::Builder.new
-
-        if firstId
-            queryBuilder.add("firstId", firstId.to_s)
-        end
-
-        if limit
-            queryBuilder.add("limit", limit.to_s)
-        end
 
         if textLen
             queryBuilder.add("textLen", textLen.to_s)
@@ -54,7 +46,7 @@ class PostService < BaseService
         resp = sendGet(path)
 
         posts = resp["posts"]?.try &.as_a? || Array(JSON::Any).new                
-        total = resp["total"]?.try &.as_i64? || 0_i64
+        total = resp["pageCount"]?.try &.as_i64? || 0_i64
         
         postArray = posts.map { |x|
             PostItemData.fromJson(x)

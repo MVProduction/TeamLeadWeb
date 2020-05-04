@@ -34,6 +34,11 @@
     color: #555;
 }
 
+#post-pager .current-pager {
+    background-color: #3b7bff;
+    color: #fff;
+}
+
 #user-avatar {
     width: 2em;
     height: 2em;

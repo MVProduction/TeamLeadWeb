@@ -135,7 +135,11 @@
     </div>
     <div id="post-pager" class="d-flex">      
       {% for pageInd in pageIndexes %}
-      <a href="/page{{ pageInd + 1 }}" class="btn btn-outline-secondary mr-2">{{ pageInd + 1 }}</a>
+        {% if pageInd == (currentPage - 1)  %}
+          <a href="?page={{ pageInd + 1 }}" class="btn btn-outline-secondary mr-2 current-pager">{{ pageInd + 1 }}</a>
+        {% else %}
+          <a href="?page={{ pageInd + 1 }}" class="btn btn-outline-secondary mr-2">{{ pageInd + 1 }}</a>
+        {% endif %}
       {% endfor %}
       
       {% if hasPages %}
